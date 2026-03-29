@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamila Janmohamed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #00356b;
+      --accent:    #286dc0;
+      --accent-lt: #e5eef8;
+      --text:      #2d3748;
+      --muted:     #5a6a7e;
+      --rule:      #d4dde9;
+      --bg:        #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    /* ── Thin top bar ─────────────────────────── */
+    .topbar {
+      background: var(--navy);
+      height: 4px;
+      width: 100%;
+    }
+
+    /* ── Page container ───────────────────────── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px 96px;
+    }
+
+    /* ── Header / Hero ────────────────────────── */
+    header {
+      display: flex;
+      align-items: flex-start;
+      gap: 48px;
+      padding: 64px 0 56px;
+      border-bottom: 1.5px solid var(--rule);
+    }
+
+    /* Headshot */
+    .headshot {
+      flex-shrink: 0;
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #c8daf2 0%, #dbeafe 100%);
+      border: 2.5px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--accent);
+    }
+    .headshot svg { opacity: 0.5; }
+    .headshot-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.65;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Bio block */
+    .bio {
+      flex: 1;
+      min-width: 0;
+      padding-top: 6px;
+    }
+
+    .bio h1 {
+      font-family: 'Lora', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .bio h1 { margin-bottom: 18px; }
+
+    .bio p {
+      font-size: 15.5px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    /* Contact links row */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-row a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s;
+    }
+    .contact-row a:hover { color: var(--accent); }
+
+    .contact-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--rule);
+    }
+
+    /* CV Button */
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--navy);
+      color: #fff !important;
+      font-size: 13.5px !important;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 5px;
+      text-decoration: none !important;
+      letter-spacing: 0.02em;
+      transition: background 0.15s;
+    }
+    .cv-btn:hover { background: var(--accent) !important; }
+
+    /* ── Sections ─────────────────────────────── */
+    section {
+      padding-top: 52px;
+    }
+
+    .section-heading {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* Empty state */
+    .empty-note {
+      font-size: 15px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Paper entries */
+    .paper {
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .paper:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .paper-title {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .paper-authors {
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 13px;
+      color: #a0aec0;
+      text-align: center;
+    }
+
+    /* ── Responsive ───────────────────────────── */
+    @media (max-width: 620px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
+        padding: 44px 0 40px;
+      }
+      .contact-row { justify-content: center; }
+      .bio h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<div class="page">
+
+  <!-- ── Header ── -->
+  <header>
+
+    <!-- Headshot placeholder -->
+    <div class="headshot">
+      <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none"
+           stroke="#286dc0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+      <div class="headshot-label">Photo<br/>coming soon</div>
+    </div>
+
+    <!-- Bio -->
+    <div class="bio">
+      <h1>Kamila Janmohamed</h1>
+      <p>
+        I am a Ph.D. candidate in Economics at Yale University. My primary field is Labor Economics,
+        with secondary fields in Development Economics and Public Economics.
+      </p>
+      <p>
+        My research studies labor markets, household economic behavior, and inequality — with a focus
+        on how institutions and policies shape outcomes for workers, particularly in developing
+        country contexts.
+      </p>
+
+      <div class="contact-row">
+        <a class="cv-btn" href="CV.pdf" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          Curriculum Vitae
+        </a>
+
+        <div class="contact-divider"></div>
+
+        <a href="mailto:kamila.janmohamed@yale.edu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          kamila.janmohamed@yale.edu
+        </a>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ── Working Papers ── -->
+  <section id="working-papers">
+    <h2 class="section-heading">Working Papers</h2>
+    <p class="empty-note">Working papers coming soon.</p>
+  </section>
+
+  <!-- ── Work in Progress ── -->
+  <section id="work-in-progress">
+    <h2 class="section-heading">Work in Progress</h2>
+
+    <div class="paper">
+      <div class="paper-title">"Consumption Responses to Expense Shocks"</div>
+      <div class="paper-authors">with Guillermo Carranza Jordan and Leo Feler</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">"Gender Representation and Collective Bargaining: Evidence from Mexico"</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">"Temporary Labour in Healthcare"</div>
+      <div class="paper-authors">with Savita Diggs</div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">"Outsourcing and Informality"</div>
+    </div>
+
+  </section>
+
+  <footer>
+    Last updated March 2026 &middot; Kamila Janmohamed
+  </footer>
+
+</div>
+</body>
+</html>
