@@ -148,7 +148,7 @@
 
     /* ── Sections ─────────────────────────────── */
     section {
-      padding-top: 52px;
+      padding-top: 12px;
     }
 
     .section-heading {
@@ -156,16 +156,10 @@
       font-size: 20px;
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: 28px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 14px;
-    }
-    .section-heading::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--rule);
     }
 
     /* Empty state */
@@ -175,30 +169,30 @@
       font-style: italic;
     }
 
-    /* Paper entries */
-    .paper {
-      margin-bottom: 28px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--rule);
+    /* Paper list */
+    .paper-list {
+      list-style: none;
+      padding-left: 0;
     }
-    .paper:last-child {
-      border-bottom: none;
+
+    .paper-list li {
+      margin-bottom: 12px;
+    }
+    .paper-list li:last-child {
       margin-bottom: 0;
-      padding-bottom: 0;
     }
 
     .paper-title {
-      font-family: 'Lora', serif;
-      font-size: 17px;
+      font-size: 15.5px;
       font-style: italic;
-      color: var(--navy);
-      line-height: 1.45;
-      margin-bottom: 5px;
+      color: var(--text);
+      line-height: 1.5;
     }
 
     .paper-authors {
-      font-size: 14.5px;
+      font-size: 15.5px;
       color: var(--muted);
+      line-height: 1.5;
     }
 
     /* ── Footer ───────────────────────────────── */
@@ -293,23 +287,22 @@
   <section id="work-in-progress">
     <h2 class="section-heading">Work in Progress</h2>
 
-    <div class="paper">
-      <div class="paper-title">"Consumption Responses to Expense Shocks"</div>
-      <div class="paper-authors">with Guillermo Carranza Jordan and Leo Feler</div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">"Gender Representation and Collective Bargaining: Evidence from Mexico"</div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">"Temporary Labour in Healthcare"</div>
-      <div class="paper-authors">with Savita Diggs</div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">"Outsourcing and Informality"</div>
-    </div>
+    <ul class="paper-list">
+      <li>
+        <div class="paper-title">"Consumption Responses to Expense Shocks"</div>
+        <div class="paper-authors">with Guillermo Carranza Jordan and Leo Feler</div>
+      </li>
+      <li>
+        <div class="paper-title">"Gender Representation and Collective Bargaining: Evidence from Mexico"</div>
+      </li>
+      <li>
+        <div class="paper-title">"Temporary Labour in Healthcare"</div>
+        <div class="paper-authors">with Savita Diggs</div>
+      </li>
+      <li>
+        <div class="paper-title">"Outsourcing and Informality"</div>
+      </li>
+    </ul>
 
   </section>
 
