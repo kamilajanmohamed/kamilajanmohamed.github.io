@@ -28,21 +28,11 @@
       line-height: 1.75;
     }
 
-    /* ── Thin top bar ─────────────────────────── */
-    .topbar {
-      background: var(--navy);
-      height: 4px;
-      width: 100%;
-    }
+    .topbar { background: var(--navy); height: 4px; width: 100%; }
 
-    /* ── Page container ───────────────────────── */
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 32px 96px;
-    }
+    .page { max-width: 860px; margin: 0 auto; padding: 0 32px 96px; }
 
-    /* ── Header / Hero ────────────────────────── */
+    /* ── Header ── */
     header {
       display: flex;
       align-items: flex-start;
@@ -51,171 +41,130 @@
       border-bottom: 1.5px solid var(--rule);
     }
 
-    /* Headshot */
     .headshot {
       flex-shrink: 0;
-      width: 168px;
-      height: 168px;
+      width: 168px; height: 168px;
       border-radius: 50%;
       background: linear-gradient(145deg, #c8daf2 0%, #dbeafe 100%);
       border: 2.5px solid var(--rule);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--accent);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px; color: var(--accent);
     }
     .headshot svg { opacity: 0.5; }
     .headshot-label {
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      opacity: 0.65;
-      text-align: center;
-      line-height: 1.4;
+      font-size: 10.5px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); opacity: 0.65;
+      text-align: center; line-height: 1.4;
     }
 
-    /* Bio block */
-    .bio {
-      flex: 1;
-      min-width: 0;
-      padding-top: 6px;
-    }
-
+    .bio { flex: 1; min-width: 0; padding-top: 6px; }
     .bio h1 {
-      font-family: 'Lora', serif;
-      font-size: 32px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 6px;
+      font-family: 'Lora', serif; font-size: 32px;
+      font-weight: 600; color: var(--navy);
+      line-height: 1.2; margin-bottom: 18px;
     }
+    .bio p { font-size: 15.5px; color: var(--text); line-height: 1.8; margin-bottom: 10px; }
 
-    .bio h1 { margin-bottom: 18px; }
-
-    .bio p {
-      font-size: 15.5px;
-      color: var(--text);
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
-
-    /* Contact links row */
     .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px;
-      margin-top: 24px;
+      display: flex; flex-wrap: wrap;
+      align-items: center; gap: 14px; margin-top: 24px;
     }
-
     .contact-row a {
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: color 0.15s;
+      font-size: 14px; color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 5px; transition: color 0.15s;
     }
     .contact-row a:hover { color: var(--accent); }
 
-    .contact-divider {
-      width: 1px;
-      height: 14px;
-      background: var(--rule);
-    }
+    .contact-divider { width: 1px; height: 14px; background: var(--rule); }
 
-    /* CV Button */
     .cv-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: var(--navy);
-      color: #fff !important;
-      font-size: 13.5px !important;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 5px;
-      text-decoration: none !important;
-      letter-spacing: 0.02em;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--navy); color: #fff !important;
+      font-size: 13.5px !important; font-weight: 600;
+      padding: 8px 18px; border-radius: 5px;
+      text-decoration: none !important; letter-spacing: 0.02em;
       transition: background 0.15s;
     }
     .cv-btn:hover { background: var(--accent) !important; }
 
-    /* ── Sections ─────────────────────────────── */
-    section {
-      padding-top: 12px;
-    }
-
-    .section-heading {
-      font-family: 'Lora', serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 12px;
+    /* ── Nav ── */
+    nav {
       display: flex;
-      align-items: center;
-      gap: 14px;
+      border-bottom: 1.5px solid var(--rule);
+    }
+    nav button {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14.5px; font-weight: 500;
+      color: var(--muted); background: none; border: none;
+      border-bottom: 2.5px solid transparent;
+      margin-bottom: -1.5px;
+      padding: 18px 20px 16px;
+      letter-spacing: 0.02em; cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    nav button:hover { color: var(--navy); }
+    nav button.active {
+      color: var(--navy);
+      border-bottom-color: var(--navy);
+      font-weight: 600;
     }
 
-    /* Empty state */
-    .empty-note {
-      font-size: 15px;
-      color: var(--muted);
-      font-style: italic;
-    }
+    /* ── Tab panels ── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
 
-    /* Paper list */
-    .paper-list {
-      list-style: none;
-      padding-left: 0;
+    /* ── Research ── */
+    section { padding-top: 40px; }
+    .section-heading {
+      font-family: 'Lora', serif; font-size: 20px;
+      font-weight: 600; color: var(--navy); margin-bottom: 12px;
     }
+    .empty-note { font-size: 15px; color: var(--muted); font-style: italic; }
+    .paper-list { list-style: none; padding-left: 0; }
+    .paper-list li { margin-bottom: 12px; }
+    .paper-list li:last-child { margin-bottom: 0; }
+    .paper-title { font-size: 15.5px; font-style: italic; color: var(--text); line-height: 1.5; }
+    .paper-authors { font-size: 15.5px; color: var(--muted); line-height: 1.5; }
 
-    .paper-list li {
-      margin-bottom: 12px;
+    /* ── Teaching ── */
+    .teaching-block { padding-top: 40px; }
+    .institution-heading {
+      font-family: 'Lora', serif; font-size: 20px;
+      font-weight: 600; color: var(--navy); margin-bottom: 14px;
     }
-    .paper-list li:last-child {
-      margin-bottom: 0;
+    .course-list { list-style: none; padding-left: 0; }
+    .course-list li {
+      font-size: 15.5px; color: var(--text); line-height: 1.6;
+      padding: 6px 0 6px 18px;
+      border-left: 2.5px solid var(--accent-lt);
+      margin-bottom: 8px;
     }
+    .course-list li:last-child { margin-bottom: 0; }
+    .course-list li .role {
+      font-size: 14px; color: var(--muted);
+      display: block; margin-top: 1px;
+    }
+    .course-list a {
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid transparent; transition: border-color 0.15s;
+    }
+    .course-list a:hover { border-bottom-color: var(--accent); }
 
-    .paper-title {
-      font-size: 15.5px;
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    .paper-authors {
-      font-size: 15.5px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── Footer ───────────────────────────────── */
+    /* ── Footer ── */
     footer {
-      margin-top: 80px;
-      padding-top: 24px;
+      margin-top: 80px; padding-top: 24px;
       border-top: 1px solid var(--rule);
-      font-size: 13px;
-      color: #a0aec0;
-      text-align: center;
+      font-size: 13px; color: #a0aec0; text-align: center;
     }
 
-    /* ── Responsive ───────────────────────────── */
+    /* ── Responsive ── */
     @media (max-width: 620px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 28px;
-        padding: 44px 0 40px;
-      }
+      header { flex-direction: column; align-items: center; text-align: center; gap: 28px; padding: 44px 0 40px; }
       .contact-row { justify-content: center; }
       .bio h1 { font-size: 26px; }
+      nav button { padding: 14px 12px 12px; font-size: 13.5px; }
     }
   </style>
 </head>
@@ -225,10 +174,7 @@
 
 <div class="page">
 
-  <!-- ── Header ── -->
   <header>
-
-    <!-- Headshot placeholder -->
     <div class="headshot">
       <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none"
            stroke="#286dc0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
@@ -238,16 +184,15 @@
       <div class="headshot-label">Photo<br/>coming soon</div>
     </div>
 
-    <!-- Bio -->
     <div class="bio">
       <h1>Kamila Janmohamed</h1>
       <p>
-        Hello! I am a Ph.D. student in Economics at Yale University. My primary field is Labor Economics. 
-        I am interested in how labour market institutions and
-        policies shape outcomes for workers, particularly in developing country contexts.
+        Hello! I am a Ph.D. student in Economics at Yale University. My primary field is Labor Economics.
+        I am interested in how labour market institutions and policies shape outcomes for workers,
+        particularly in developing country contexts.
       </p>
       <p>
-        Before starting my PhD, I worked in economic consulting at Cornerstone Research. 
+        Before starting my PhD, I worked in economic consulting at Cornerstone Research.
         I grew up in Dar es Salaam, Tanzania.
       </p>
 
@@ -263,43 +208,91 @@
 
         <div class="contact-divider"></div>
 
-        <a href="mailto:kamila.janmohamed@yale.edu">
+        <!-- Email assembled in JS to stay obfuscation-proof without Cloudflare mangling it -->
+        <a id="email-link" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
           </svg>
-          kamila.janmohamed@yale.edu
+          <span id="email-text"></span>
         </a>
-
       </div>
     </div>
-
   </header>
 
-  <!-- ── Working Papers ── -->
-  <section id="working-papers">
-    <h2 class="section-heading">Working Papers</h2>
-    <p class="empty-note">Working papers coming soon.</p>
-  </section>
+  <!-- Nav -->
+  <nav>
+    <button class="active" onclick="switchTab('research', this)">Research</button>
+    <button onclick="switchTab('teaching', this)">Teaching</button>
+  </nav>
 
-  <!-- ── Work in Progress ── -->
-  <section id="work-in-progress">
-    <h2 class="section-heading">Work in Progress</h2>
+  <!-- Research tab -->
+  <div id="tab-research" class="tab-panel active">
+    <section id="working-papers">
+      <h2 class="section-heading">Working Papers</h2>
+      <p class="empty-note">Working papers coming soon.</p>
+    </section>
 
-    <ul class="paper-list">
-      <li>
-        <div class="paper-title">"Consumption Responses to Expense Shocks"</div>
-        <div class="paper-authors">with Guillermo Carranza Jordan and Leo Feler</div>
-      </li>
-    </ul>
+    <section id="work-in-progress">
+      <h2 class="section-heading">Work in Progress</h2>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">"Consumption Responses to Expense Shocks"</div>
+          <div class="paper-authors">with Guillermo Carranza Jordan and Leo Feler</div>
+        </li>
+      </ul>
+    </section>
+  </div>
 
-  </section>
+  <!-- Teaching tab -->
+  <div id="tab-teaching" class="tab-panel">
+    <div class="teaching-block">
+      <h2 class="institution-heading">Yale University</h2>
+      <ul class="course-list">
+        <li>
+          Introduction to Microeconomics (ECON 115)
+          <span class="role">Teaching Fellow</span>
+        </li>
+        <li>
+          Introduction to Macroeconomics (ECON 116)
+          <span class="role">Teaching Fellow</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <footer>
     Last updated March 2026 &middot; Kamila Janmohamed
   </footer>
 
 </div>
+
+<script>
+  // Assemble email at runtime — stays readable, won't be mangled by Cloudflare or spam scrapers
+  (function () {
+    var parts = ['kamila.janmohamed', 'yale.edu'];
+    var addr = parts.join('@');
+    document.getElementById('email-link').href = 'mailto:' + addr;
+    document.getElementById('email-text').textContent = addr;
+  }());
+
+  // Tab switching — pure DOM show/hide, zero page reload
+  function switchTab(name, btn) {
+    document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.remove('active'); });
+    document.querySelectorAll('nav button').forEach(function (b) { b.classList.remove('active'); });
+    document.getElementById('tab-' + name).classList.add('active');
+    btn.classList.add('active');
+    history.replaceState(null, '', window.location.pathname + (name === 'research' ? '' : '#' + name));
+  }
+
+  // Restore tab from URL hash on load (e.g. direct link to #teaching)
+  (function () {
+    if (window.location.hash === '#teaching') {
+      switchTab('teaching', document.querySelector('nav button:nth-child(2)'));
+    }
+  }());
+</script>
+
 </body>
 </html>
