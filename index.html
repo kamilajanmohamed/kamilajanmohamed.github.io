@@ -264,8 +264,8 @@
 <script>
   // Assemble email at runtime — stays readable, won't be mangled by Cloudflare or spam scrapers
   (function () {
-    var parts = ['kamila.janmohamed', 'yale.edu'];
-    var addr = parts.join('@');
+    var parts = ['kamila', 'dot', 'janmohamed', 'at', 'yale', 'dot', 'edu'];
+    var addr = parts.join('').replace(/dot/g, '.').replace('at', '@');
     document.getElementById('email-link').href = 'mailto:' + addr;
     document.getElementById('email-text').textContent = addr;
   }());
