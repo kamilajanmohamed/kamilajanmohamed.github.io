@@ -256,7 +256,9 @@
 <script>
   // Assemble email at runtime — stays readable, won't be mangled by Cloudflare or spam scrapers
   (function () {
-    document.getElementById('email-text').textContent = 'kamila dot janmohamed at yale dot edu';
+    var parts = ['kamila', 'dot', 'janmohamed', 'at', 'yale', 'dot', 'edu'];
+    var addr = parts.join('').replace(/dot/g, '.').replace('at', '@');
+    document.getElementById('email-text').textContent = addr;
   }());
 
   // Tab switching — pure DOM show/hide, zero page reload
