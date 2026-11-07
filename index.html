@@ -124,6 +124,21 @@
     .paper-list li:last-child { margin-bottom: 0; }
     .paper-title { font-size: 15.5px; color: var(--text); line-height: 1.5; }
     .paper-authors { font-size: 14px; color: var(--muted); line-height: 1.5; }
+    .paper-authors a, .paper-links a, .paper-links summary {
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid transparent; transition: border-color 0.15s;
+    }
+    .paper-authors a:hover, .paper-links a:hover, .paper-links summary:hover { border-bottom-color: var(--accent); }
+    .paper-links { font-size: 14px; line-height: 1.5; margin-top: 2px; }
+    .paper-links a { margin-right: 8px; }
+    .paper-links details { display: inline; }
+    .paper-links summary { display: inline; cursor: pointer; list-style: none; }
+    .paper-links summary::-webkit-details-marker { display: none; }
+    .paper-abstract {
+      display: block; margin: 8px 0 4px; padding: 10px 14px;
+      font-size: 14.5px; line-height: 1.65; color: var(--text);
+      background: var(--accent-lt); border-left: 3px solid var(--accent);
+    }
 
     /* ── Teaching ── */
     .teaching-block { padding-top: 40px; }
@@ -221,15 +236,34 @@
 
   <!-- Research tab -->
   <div id="tab-research" class="tab-panel active">
+    <section id="working-papers">
+      <h2 class="section-heading">Working Papers</h2>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">The Impact of Expense Shocks on Household Consumption</div>
+          <div class="paper-authors">with <a href="https://g-carranza.github.io/" target="_blank" rel="noopener">Guillermo Carranza Jordan</a> and Leo Feler</div>
+          <div class="paper-links">
+            <a href="https://g-carranza.github.io/files/pdf/CJF.pdf" target="_blank" rel="noopener">[Draft (PDF)]</a>
+            <details>
+              <summary>[Abstract]</summary>
+              <p class="paper-abstract">Expense shocks&mdash;large, unexpected household outlays&mdash;are a common source of liquidity risk. This paper studies how households absorb them by linking an original survey of more than 3,000 households to high-frequency transaction panel data. Between January 2025 and March 2026, 65% of households reported experiencing a shock, and the median shock equals 46% of monthly household income. Using a difference-in-differences design, we find that expense shocks moderately reduce food expenditures by 2.1% on average, with stronger effects among lower-income households. Consumption responses vary sharply with shock size: shocks worth half to one month of household income reduce food expenditures by 8.1%, while the effects of smaller and larger shocks are small and statistically indistinguishable from zero. This non-monotonicity partly reflects financing: households cover small shocks with cash and large shocks with loans, while medium-sized shocks are too large for liquid buffers but too small for costlier financing.</p>
+            </details>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Work in Progress section: hidden for now. Remove the comment markers to show it again.
     <section id="work-in-progress">
       <h2 class="section-heading">Work in Progress</h2>
       <ul class="paper-list">
         <li>
-          <div class="paper-title">Consumption Responses to Expense Shocks</div>
-          <div class="paper-authors">with Guillermo Carranza Jordan and Leo Feler</div>
+          <div class="paper-title">Paper title</div>
+          <div class="paper-authors">with Co-author Name</div>
         </li>
       </ul>
     </section>
+    -->
   </div>
 
   <!-- Teaching tab -->
